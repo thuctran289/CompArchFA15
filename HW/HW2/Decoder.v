@@ -15,10 +15,13 @@ module structuralDecoder(out0,out1,out2,out3, address0,address1, enable);
 output out0, out1, out2, out3;
 input address0, address1;
 input enable;
-
 wire nAddress0, nAddress1;
+
+//Creates negations of the input addresses. 
 `NOT a0inv(nAddress0, address0);
 `NOT a1inv(nAddress1, address1);
+
+//Associates the proper bit conditions for each output line. 
 `AND o0(out0, enable, nAddress0, nAddress1);
 `AND o1(out1, enable, address0, nAddress1);
 `AND o2(out2, enable, nAddress0, address1);

@@ -13,14 +13,17 @@ module structuralFullAdder(out, carryout, a, b, carryin);
 output out, carryout;
 input a, b, carryin;
 wire aXorb,bOrC, aAndBorC, bAndc;
+
+//Two xors used for determining the output sum. 
 `XOR aXorbgate(aXorb, a, b);
 `XOR aXorbXorcgate(out, aXorb, carryin);
 
+//Used for determining the Carryout value. 
 `OR bOrcgate(bOrC, b, carryin);
 `AND aAndbOrCgate(aAndBorC, bOrC, a);
-
 `AND bAndcgate(bAndc, b,carryin);
 `OR cout(carryout, bAndc, aAndBorC);
+
 endmodule
 
 module testFullAdder;

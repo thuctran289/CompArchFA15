@@ -1,0 +1,16 @@
+Deliverable 1:
+See deliverable 1 pdf.
+Deliverable 2:
+See Register32.v
+Deliverable 3:
+See register32zero.v
+Deliverable 4:
+See mux32to1by1.v
+Deliverable 5:
+See mux32to1by32.v
+Deliverable 6:
+Essentially, what happens is that the behavioral verilog will initalize the registers for out as zero, and than left shift the enable signal to whatever the address is. The bits that are added due to the shift are set to zero. As a result, one gets the enable to on the particular pin you want it to be on. 
+Deliverable 7:
+See regfile.v
+Deliverable 8:
+See regfile.t.v
